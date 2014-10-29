@@ -62,12 +62,7 @@
       <string v="oracle.bpm.fusion.repository.BPMProjectSettings/bpmProjectsProcessesContentSet"/>
    </list>
    <value n="defaultPackage" v="br.com.book"/>
-   <url n="FirstBPELProcess_bpelFileURL" path="FirstBPELProcess.bpel"/>
-   <value n="FirstBPELProcess_Namespace" v="http://xmlns.oracle.com/BookApplication/FirstProject/FirstBPELProcess"/>
-   <value n="FirstBPELProcess_ProcessName" v="FirstBPELProcess"/>
-   <value n="FirstBPELProcess_Template" v="BPEL_SYNC_PROCESS"/>
-   <value n="FirstBPELProcess_wsdl" v="FirstBPELProcess.wsdl"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/BookApplication/FirstProject/SecondBPELProcess"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/BookApplication/ThirdProject/ThirdBPELProcess"/>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
          <list n="url-path"/>
@@ -120,7 +115,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="FirstProject">
+         <hash n="ThirdProject">
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
@@ -262,21 +257,21 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/sca_FirstProject${composite.revision_id}.jar"/>
+            <url n="jarURL" path="deploy/sca_ThirdProject${composite.revision_id}.jar"/>
             <hash n="libraryDependencies">
                <value n="IncludeLibrariesFromOtherContainers" v="true"/>
             </hash>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
-            <value n="profileName" v="FirstProject"/>
+            <value n="profileName" v="ThirdProject"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="FirstProject"/>
+         <string v="ThirdProject"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="BookApplication-FirstProject-webapp"/>
-      <value n="j2eeWebContextRoot" v="BookApplication-FirstProject-context-root"/>
+      <value n="j2eeWebAppName" v="BookApplication-ThirdProject-webapp"/>
+      <value n="j2eeWebContextRoot" v="BookApplication-ThirdProject-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
@@ -374,11 +369,10 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="SecondBPELProcess"/>
-   <url n="SecondBPELProcess_bpelFileURL" path="SecondBPELProcess.bpel"/>
-   <value n="SecondBPELProcess_Namespace" v="http://xmlns.oracle.com/BookApplication/FirstProject/SecondBPELProcess"/>
-   <value n="SecondBPELProcess_ProcessName" v="SecondBPELProcess"/>
-   <value n="SecondBPELProcess_Template" v="BPEL_SYNC_PROCESS"/>
-   <value n="SecondBPELProcess_wsdl" v="SecondBPELProcess.wsdl"/>
-   <value n="Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="ProcessName" v="ThirdBPELProcess"/>
+   <value n="Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="ThirdBPELProcess_Namespace" v="http://xmlns.oracle.com/BookApplication/ThirdProject/ThirdBPELProcess"/>
+   <value n="ThirdBPELProcess_ProcessName" v="ThirdBPELProcess"/>
+   <value n="ThirdBPELProcess_Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="ThirdBPELProcess_wsdl" v="ThirdBPELProcess.wsdl"/>
 </jpr:project>

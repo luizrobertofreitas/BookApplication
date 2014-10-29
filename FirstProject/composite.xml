@@ -12,10 +12,17 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
   <import namespace="http://xmlns.oracle.com/BookApplication/FirstProject/FirstBPELProcess"
           location="FirstBPELProcess.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/BookApplication/FirstProject/SecondBPELProcess"
+          location="SecondBPELProcess.wsdl" importType="wsdl"/>
   <service name="firstBPELProcessService_ep"
            ui:wsdlLocation="FirstBPELProcess.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/BookApplication/FirstProject/FirstBPELProcess#wsdl.interface(FirstBPELProcess)"/>
     <binding.ws port="http://xmlns.oracle.com/BookApplication/FirstProject/FirstBPELProcess#wsdl.endpoint(firstBPELProcessService_ep/FirstBPELProcess_pt)"/>
+  </service>
+  <service name="SecondBPELProcessClient_ep"
+           ui:wsdlLocation="SecondBPELProcess.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/BookApplication/FirstProject/SecondBPELProcess#wsdl.interface(SecondBPELProcess)"/>
+    <binding.ws port="http://xmlns.oracle.com/BookApplication/FirstProject/SecondBPELProcess#wsdl.endpoint(SecondBPELProcessClient_ep/SecondBPELProcess_pt)"/>
   </service>
   <property name="productVersion" type="xs:string" many="false">11.1.1.7.0</property>
   <component name="FirstBPELProcess" version="2.0">
@@ -24,8 +31,18 @@
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
   </component>
+  <component name="SecondBPELProcess" version="2.0">
+    <implementation.bpel src="SecondBPELProcess.bpel"/>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
+              many="false">async.persist</property>
+  </component>
   <wire>
     <source.uri>firstBPELProcessService_ep</source.uri>
     <target.uri>FirstBPELProcess/firstBPELProcessService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>SecondBPELProcessClient_ep</source.uri>
+    <target.uri>SecondBPELProcess/SecondBPELProcessClient</target.uri>
   </wire>
 </composite>
